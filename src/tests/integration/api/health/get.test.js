@@ -1,3 +1,9 @@
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
+});
+
 describe("GET /api/health", () => {
   describe("Anonymous user", () => {
     test("Check current health", async () => {
